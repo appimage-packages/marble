@@ -35,7 +35,7 @@ node('linux') {
             extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'appimage-template']], submoduleCfg: [], \
             userRemoteConfigs: [[url: 'https://github.com/appimage-packages/appimage-template']]]
             checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
-            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'marble']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/marble']]]
+            extensions: [[$class: 'CleanBeforeCheckout'],[$class: 'RelativeTargetDirectory', relativeTargetDir: 'marble']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/marble']]]
        }
         stage( 'Setup' ) {
             sh 'bundle install'
