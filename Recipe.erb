@@ -123,10 +123,10 @@ export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
 
-<%= name %> $@
+marble-qt $@
 EOF
 chmod +x AppRun
-mv marble-qt ./usr/bin/
+mv marble ./usr/bin/marble-qt
 cp <%= name %>.desktop ./usr/share/applications/
 cd /
 wget "https://github.com/probonopd/AppImageKit/releases/download/knowngood/appimagetool-x86_64.AppImage"
