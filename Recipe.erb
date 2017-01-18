@@ -36,7 +36,7 @@ chmod a+x linuxdeployqt-1-x86_64.AppImage
 cd /<%= name %>.AppDir
 
 #Move binary/desktop/icon into AppDir
-mv /opt/usr/bin/marble-qt .
+mv /opt/usr/bin/marble-qt marble
 mv /opt/usr/share/applications/org.kde.marble-qt.desktop <%= name %>.desktop
 cp /opt/usr/share/icons/hicolor/48x48/apps/*<%= name %>* .
 
@@ -69,7 +69,7 @@ mv /opt/usr/libexec/kf5/* ./usr/bin/ || true
 mv /opt/usr/libexec/gstreamer-1.0/* ./usr/bin || true
 cp -rfv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
 unset LD_LIBRARY_PATH
-../linuxdeployqt-1-x86_64.AppImage <%= name %> -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
+../linuxdeployqt-1-x86_64.AppImage marble -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
 patch_usr
 glibc_needed
 delete_blacklisted
