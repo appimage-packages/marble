@@ -48,6 +48,7 @@ cp -rfv /opt/usr/plugins/<%= name %> ./plugins || true
 mkdir -p ./usr/{share,bin,lib}
 mkdir ./etc
 rsync -aruxv --progress /opt/usr/plugins/ ./plugins/
+rsync -aruxv --progress /opt/usr/lib/marble/plugins/ ./plugins/
 rsync -aruxv --progress /opt/usr/share/ ./usr/share/
 rsync -aruxv --progress /opt/etc/ ./etc/
 rsync -aruxv --progress /opt/usr/qml/ ./qml
@@ -117,7 +118,7 @@ export QT_PLUGIN_PATH=\$HERE/plugins
 export PATH=\$HERE/usr/bin/:\$HERE/usr/sbin/:\$HERE/usr/games/:\$HERE/bin/:\$HERE/sbin/:$PATH
 export LD_LIBRARY_PATH=\$HERE/usr/lib/:\$HERE/usr/lib/x86_64-linux-gnu/:\$HERE/usr/lib64/:\$HERE/lib/:\$HERE/lib/x86_64-linux-gnu/:\$HERE/lib64/:$LD_LIBRARY_PATH
 export XDG_DATA_DIRS=\$HERE/usr/share:$HOME/.local/share:/usr/local/share/:/usr/share:$XDG_DATA_DIRS
-export XDG_DATA_HOME=$HOME/.local/share
+export XDG_DATA_HOME=\$HOME/.local/share
 export XDG_CONFIG_DIRS=\$HERE/etc/xdg:$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
