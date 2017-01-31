@@ -2,7 +2,6 @@ name: marble
 packages:
   - build-essential
   - libexiv2-dev
-  #app specifc
 frameworks:
   build_kf5: true
   frameworks:
