@@ -1,4 +1,5 @@
 name: marble
+binary: marble-qt
 packages:
   - build-essential
   - libexiv2-dev
